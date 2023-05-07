@@ -31,7 +31,7 @@ https://www.trufflesuite.com/ganache
 
 we provide two tests, one for local and one for online. If you only want to test those locally, you need to remove NFTOnline.test.js from test file first and then do the following test. Similarly, if you want to do online test, you need to remove NFT.test.js from test file and then run following code.
 
-The tests can be executed by runing the following command:
+The tests can be executed by running the following command:
 
 ```shell
 $ truffle test
@@ -53,7 +53,11 @@ You can interact with our user interface by using node. You need to change your 
 node app.js
 ```
 
-Then, go to http://localhost:3000, and the NFT marketplace will appear in front of you.
+Then, go to 
+
+http://localhost:3000
+
+and the interface of NFT marketplace will appear in front of you.
 
 ### Contributions of Each Team Member
 Jing Wu(jw4288) and Xin Fang(xf2246) are responsible for:
