@@ -4,7 +4,7 @@
 
 This is the Final Project for ELEN 6883 Blockchain. The NFT marketplace smart contract will allow users to create, buy, sell, and trade unique digital assets represented as NFTs. The project will involve creating an ERC-721 compliant smart contract, designing a user interface for the marketplace, and implementing additional features to ensure the marketplace's security and usability.
 
-###Team member:
+### Team member:
 
 Jing Wu(jw4288), Xin Fang(xf2246) and Yueyang Ying(yy3267)
 
