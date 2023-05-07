@@ -40,17 +40,19 @@ we provide two tests, one for local and one for online. If you only want to test
 
 The tests can be executed by running the following command:
 
+Deploy the contracts on your Ganache local blockchain by running the following command:
+
 ```shell
-$ truffle test
+$ truffle migrate --network development
+```
+
+```shell
+$ truffle test ./test/NFT.test.js
 ```
 
 ### Deployment on Local Blockchain
 
-Deploy the contracts on your Ganache local blockchain by running the following command:
 
-```shell
-$ truffle migrate
-```
 
 
 ### Deployment on Online platform
