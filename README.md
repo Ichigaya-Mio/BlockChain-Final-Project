@@ -79,7 +79,7 @@ truffle migrate --network sepolia
 ```
 
 ```shell
-truffle test --network sepolia
+truffle test ./test/NFTOnline.test.js --network sepolia
 ```
 
 And the deployment status and the contract address will be shown in terminal. You can monitor the contracts, account information on Etherscan:
