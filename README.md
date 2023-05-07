@@ -24,6 +24,12 @@ Then, you will need to install Truffle globally by running the following command
 $ npm install -g truffle
 ```
 
+If you can not install suceefully, you could use:
+
+```shell
+$ sudo npm install -g truffle
+```
+
 ### Running the Tests
 
 First, you will have to compile the smart contracts by running the following command in your terminal:
