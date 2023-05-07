@@ -51,13 +51,21 @@ $ truffle migrate
 
 ### Deployment on Online platform
 
-For cloud-based testing on a secure and reliable environment similar to the Ethereum network, we opted for the Sepolia test network. Deploying our smart contracts involved using the Truffle framework, where we wrote two migration scripts: 
+Before test online, you need to modify related part in truffle-config.js (Metamask wallet&API key)
 
-"1_initial_migration.js"
+then, you can run following two commands:
 
-"2_deploy_contracts.js"
+```shell
+truffle migrate --network sepolia
+```
 
-The former sets up the database for our contracts, creating a Migrations contract to track and record their migration on the blockchain. The latter defines the contracts we want to deploy and includes the actual deployment using the "deployer.deploy()" method along with necessary configurations and dependencies. We then deployed our smart contracts in sequence using the "truffle migrate –network xxx" command, which also recorded their deployment status in the Migrations contract.
+```shell
+truffle test --network sepolia
+```
+
+And the deployment status and the contract address will be shown in terminal. You can monitor the contracts, account information on Etherscan:
+
+https://etherscan.io/
 
 
 ### User Interface Interact
