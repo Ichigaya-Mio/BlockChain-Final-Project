@@ -43,12 +43,13 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
 
-    //development是ganache
+    //development is using local ganache
   development: {
     host: "127.0.0.1",     // Localhost (default: none)
     port: 7545,            // Standard Ethereum port (default: none)
     network_id: "*",       // Any network (default: none)
   },
+  // online test using sepolia network
   // Input your MetaMask secret recovery phrase here, it should be 12 words
   // Replace YOUR-API-KEY with your own unique project API key
   sepolia: {
@@ -56,27 +57,7 @@ module.exports = {
     network_id: '11155111',
     gas: 4465030
   },
-    //
-    // goerli: {
-    //   provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
-    //   network_id: 5,       // Goerli's id
-    //   chain_id: 5
-    // },
 
-  // sepolia: {
-  //   provider: () => new HDWalletProvider({
-  //     mnemonic: {
-  //       phrase: "pretty olympic slow sister oppose sand torch also legal define spoil narrow"
-  //     },
-  //     providerOrUrl: "https://rpc.sepolia.dev"
-  //   }),
-  //     network_id: "*",
-  //     gas: 4000000,
-  //     gasPrice: 100, // 1 gwei (in wei)
-  //     confirmations: 2,
-  //     timeoutBlocks: 200,
-  //     skipDryRun: true
-  //   }
   },
 
   // Set default mocha options here, use special reporters etc.
