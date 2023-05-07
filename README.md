@@ -51,6 +51,7 @@ https://www.trufflesuite.com/ganache
 we provide two tests, one for local and one for online. If you only want to test those locally, you need to remove NFTOnline.test.js from test file first and then do the following test. Similarly, if you want to do online test, you need to remove NFT.test.js from test file and then run following code.
 
 
+### Deployment on Local Blockchain
 
 Deploy the contracts on your Ganache local blockchain by running the following command:
 
@@ -62,11 +63,6 @@ The tests can be executed by running the following command:
 ```shell
 $ truffle test ./test/NFT.test.js
 ```
-
-### Deployment on Local Blockchain
-
-
-
 
 ### Deployment on Online platform
 
