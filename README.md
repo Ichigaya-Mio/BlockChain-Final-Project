@@ -84,7 +84,13 @@ https://etherscan.io/
 
 ### User Interface Interact
 
-You can interact with our user interface by using node. You need to change your direction into frontend first, and then run:
+You can interact with our user interface by using node. You need to change your current dictionary into 
+
+```shell
+cd /frontend 
+```
+
+first, and then run:
 
 ```shell
 node app.js
