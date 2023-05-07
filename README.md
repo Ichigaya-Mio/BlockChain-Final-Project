@@ -45,6 +45,11 @@ $ truffle migrate
 ```
 
 
+### Deployment on Online platform
+
+waiting to be filled
+
+
 ### User Interface Interact
 
 You can interact with our user interface by using node. You need to change your direction into frontend first, and then run:
