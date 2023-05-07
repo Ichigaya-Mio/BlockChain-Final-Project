@@ -9,7 +9,7 @@ This is the Final Project for ELEN 6883 Blockchain. The NFT marketplace smart co
 Jing Wu(jw4288), Xin Fang(xf2246) and Yueyang Ying(yy3267)
 
 ### Documentation:
-####main contract:
+#### main contract:
 NFTMarketplace.sol
 
 
