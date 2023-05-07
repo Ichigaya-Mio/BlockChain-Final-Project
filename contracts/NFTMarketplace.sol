@@ -39,39 +39,34 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
     mapping(uint256 => uint256) public IdToTokenId;
 
 
-
-
-
     constructor() ERC721("NFTMarketplace", "NFTM") {}
-
-
 
 
     
     function createNFT(uint256 id, string memory name, string memory description) public {
 
     
-    require(IdToTokenId[id] == 0, "NFT with this ID already exists");
+        require(IdToTokenId[id] == 0, "NFT with this ID already exists");
 
-    
-    _tokenIds.increment();
-    uint256 newNFTId = _tokenIds.current();
-    
-    _safeMint(msg.sender, newNFTId);
-   
-    _setTokenURI(newNFTId, description);
 
-    //add to mapping
-    nfts[newNFTId] = NFT(id, msg.sender, 0, name, false, description,true);
-    IdToTokenId[id] = newNFTId;
+        _tokenIds.increment();
+        uint256 newNFTId = _tokenIds.current();
 
-    
-    //emit createNFT(msg.sender, name, description);
+        _safeMint(msg.sender, newNFTId);
 
-    
-    // require(nfts[newNFTId].id == id, "Failed to create NFT");
-    //require(keccak256(abi.encodePacked(nfts[newNFTId].name)) == keccak256(abi.encodePacked(name)), "Failed to set NFT name");
-    //require(keccak256(abi.encodePacked(nfts[newNFTId].description)) == keccak256(abi.encodePacked(description)), "Failed to set NFT description");
+        _setTokenURI(newNFTId, description);
+
+        //add to mapping
+        nfts[newNFTId] = NFT(id, msg.sender, 0, name, false, description,true);
+        IdToTokenId[id] = newNFTId;
+
+
+        //emit createNFT(msg.sender, name, description);
+
+
+        // require(nfts[newNFTId].id == id, "Failed to create NFT");
+        //require(keccak256(abi.encodePacked(nfts[newNFTId].name)) == keccak256(abi.encodePacked(name)), "Failed to set NFT name");
+        //require(keccak256(abi.encodePacked(nfts[newNFTId].description)) == keccak256(abi.encodePacked(description)), "Failed to set NFT description");
     }
 
 
@@ -79,13 +74,17 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
    
    
     function getNFT(uint256 id) public view returns(NFT memory){
+    
         uint256 tokenId = IdToTokenId[id];
         return nfts[tokenId];
     }
+    
 
     function gettokenID(uint256 id) public view returns(uint256){
+    
         uint256 tokenId = IdToTokenId[id];
         return tokenId;
+        
     }
 
     
@@ -93,38 +92,38 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
     
     function transferNFT(address to, uint256 id) public {
     
-    // require(IdToTokenId[id] != 0, "NFT with this ID does not exists");
-    uint256 tokenId=IdToTokenId[id];
+        // require(IdToTokenId[id] != 0, "NFT with this ID does not exists");
+        uint256 tokenId=IdToTokenId[id];
 
-    require(_exists(tokenId),"NFT does not exit, please check your NFT id");
+        require(_exists(tokenId),"NFT does not exit, please check your NFT id");
 
-    
-    // require(nfts[tokenId].owner == msg.sender, "You do not own this NFT, please recheck");
-    require(ownerOf(tokenId) == msg.sender, "You do not own this NFT, please recheck");
-   
-    safeTransferFrom(msg.sender, to, tokenId);
-    
-    
-    require(ownerOf(tokenId) == to, "Failed to transfer NFT ownership");
 
-    
+        // require(nfts[tokenId].owner == msg.sender, "You do not own this NFT, please recheck");
+        require(ownerOf(tokenId) == msg.sender, "You do not own this NFT, please recheck");
+
+        safeTransferFrom(msg.sender, to, tokenId);
+
+
+        require(ownerOf(tokenId) == to, "Failed to transfer NFT ownership");
+
 }
+
    function listNFTForSale(uint256 id, uint256 price) public {
 
     
+        uint256 tokenId=IdToTokenId[id];
 
-    uint256 tokenId=IdToTokenId[id];
-    
-    require(_exists(tokenId), "NFT does not exist");
-    require(nfts[tokenId].couldSale==true,"NFT is no longer listed for sale as you have removed");
-    require(msg.sender == ownerOf(tokenId), "Only the owner can list the NFT for sale");
-    require(price > 0, "Price must be greater than zero");
-    
-    // Approve the contract to manage the NFT
-    _approve(address(this), tokenId);
+        require(_exists(tokenId), "NFT does not exist");
+        require(nfts[tokenId].couldSale==true,"NFT is no longer listed for sale as you have removed");
+        require(msg.sender == ownerOf(tokenId), "Only the owner can list the NFT for sale");
+        require(price > 0, "Price must be greater than zero");
 
-    nfts[tokenId].price = price;
-    nfts[tokenId].isForSale = true;
+        // Approve the contract to manage the NFT
+        _approve(address(this), tokenId);
+
+        nfts[tokenId].price = price;
+        nfts[tokenId].isForSale = true;
+        
 }
 
   function removeNFTFromSale(uint256 id) public {
