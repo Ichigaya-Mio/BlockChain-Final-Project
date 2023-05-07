@@ -1,9 +1,11 @@
 # NFT Marketplace Smart Contract Development
 ## Final Project for course ELEN 6883 Blockchain
 ### Overview
+
 This is the Final Project for ELEN 6883 Blockchain. The NFT marketplace smart contract will allow users to create, buy, sell, and trade unique digital assets represented as NFTs. The project will involve creating an ERC-721 compliant smart contract, designing a user interface for the marketplace, and implementing additional features to ensure the marketplace's security and usability.
 
 ### Installing
+
 First, you will need to install the dependencies with: npm install.
 
 Run the following command in your terminal after cloning the main repo:
@@ -19,6 +21,7 @@ $ npm install -g truffle
 ```
 
 ### Running the Tests
+
 First, you will have to compile the smart contracts by running the following command in your terminal:
 
 ```shell
@@ -38,6 +41,7 @@ $ truffle test
 ```
 
 ### Deployment on Local Blockchain
+
 Deploy the contracts on your Ganache local blockchain by running the following command:
 
 ```shell
@@ -65,6 +69,7 @@ http://localhost:3000
 and the interface of NFT marketplace will appear in front of you.
 
 ### Contributions of Each Team Member
+
 Jing Wu(jw4288) and Xin Fang(xf2246) are responsible for:
 1. designing, implementing and testing the NFT marketplace smart contract locally. 
 2. UI designing and implementing. 
